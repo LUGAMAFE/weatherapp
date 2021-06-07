@@ -1,4 +1,4 @@
-@mixin neumorphism($form: "convex", $background, $distance, $blur, $boxShadow: true, $borderSize: 1px) {
+@mixin neumorphism($form: "convex", $background, $distance, $blur: null, $boxShadow: true, $borderSize: 1px) {
     $highlight: saturate(lighten($background, 2%), 10%);
     $lowlight: desaturate(darken($background, 4%), 20%);
     $shadowhigh: saturate(lighten($background, 6%), valueminmax(10%, 10, 20));
@@ -40,17 +40,17 @@
     }
 }
 
-@mixin neumorphism-secondary($form: "convex", $background, $distance, $blur, $boxShadow: true, $borderSize: 1px) {
+@mixin neumorphism-secondary($form: "convex", $background, $distance, $boxShadow: true) {
     $highlight: saturate(lighten($background, 2%), 10%);
     $lowlight: desaturate(darken($background, 4%), 20%);
     $shadowhigh: saturate(lighten($background, 6%), valueminmax(10%, 10, 20));
     $shadowlow: desaturate(darken($background, 8%), valueminmax(20%, 10, 50));
 
     @if ($form=="concave") {
-        background: linear-gradient(120deg, #3fdfd6 10.71%, #44d8e1 60.37%, #46dfd6 103.14%);
+        background: linear-gradient(120deg, desaturate(lighten($background, 18%), 25%) 10%, desaturate(lighten($background, 13%), 20%) 60%, desaturate(lighten($background, 8%), 10%) 100%);
     }
     @if($boxShadow){
-        box-shadow: inset $distance #{$distance * 1.5} #{$distance * 2} transparentize(desaturate(opacify($background, 0.2), 30%), 0.5);
+        box-shadow: inset $distance #{$distance * 1.5} #{$distance * 2} transparentize(desaturate(opacify($background, 0.2), 20%), 0.5);
     }
 }
 
@@ -58,20 +58,3 @@
     $pendiente: ($max - $min) / 100;
     @return ($pendiente * $value)+$min;
 }
-
-// /// Slightly lighten a color
-// // @access public
-// // @param {Color} $color - color to tint
-// // @param {Number} $percentage - percentage of `$color` in returned color
-// // @return {Color}
-// @function tint($color, $percentage) {
-//     @return mix(#fff, $color, $percentage);
-// }
-// /// Slightly darken a color
-// // @access public
-// // @param {Color} $color - color to shade
-// // @param {Number} $percentage - percentage of `$color` in returned color
-// // @return {Color}
-// @function shade($color, $percentage) {
-//     @return mix(#000, $color, $percentage);
-// }

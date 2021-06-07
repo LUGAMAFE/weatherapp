@@ -1,11 +1,16 @@
 //Libraries
-@import '~overlayscrollbars/css/OverlayScrollbars';
+@import '~tippy.js/dist/tippy.css';
+@import '~tippy.js/themes/light.css';
+
 @import 'utils/bootstrap.scss';
 
 @import "common/main-fonts.scss";
 @import "common/variables";
 @import 'common/global';
 
-
 //Mixins
 @import 'utils/neumorphism.scss';
+
+//Global Styles
+@import 'components/card-main-container.scss';
+

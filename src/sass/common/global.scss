@@ -5,7 +5,7 @@ html * {
     font-style: normal;
     color: $gray-color;
     ::selection {
-        background-color: #49494928;
+        background-color: #58585828;
     }
 }
 
@@ -16,8 +16,8 @@ body{
 .icon{
     width: 1em;
     height: 1em;
+    fill: currentColor;
 }
-
 
 :root {
     --smallest-text: calc(0.3rem + 1.2vmin);

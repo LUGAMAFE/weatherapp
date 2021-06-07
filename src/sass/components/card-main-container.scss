@@ -1,0 +1,11 @@
+.card-main-container {
+    @include neumorphism("bordered", $base-color, 0.5rem, null, true, 2px);
+    .card-body{
+        display: flex;
+        flex-direction: column;
+        padding: 6vmin;
+        @media only screen and (min-width: $mobile-l) {
+            padding: max(2.5vmin, 1.5rem) max(2.5vmin, 1.5rem) 4vmin;
+        }
+    }
+}

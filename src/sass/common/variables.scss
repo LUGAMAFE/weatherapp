@@ -15,7 +15,9 @@ $min_width: 320px;
 $max_width: 1200px;
 
 $base-color: #eff1f6;
-$blue-color: #00c0c0;
+$blue-color: #218ef3;
+$lighten-blue-color: #9ecdf3;
+$yellow-color: #ffb707;
 
 $white-color: #FFFFFF;
 $black-color: #21242b;
@@ -30,34 +32,5 @@ $light-gray-color: #F5F7FA;
     --gray-color: #{$gray-color};
     --light-gray-color: #{$light-gray-color};
     --sweet-gray-color: #{$sweet-gray-color};
-
     --blue-color: #{$blue-color};
 }
-
-
-:root {
-    --page-x-margin: 8%;
-    @media only screen and (min-width: $tablet-s) {
-        --page-x-margin: 10%;
-    }
-    @media only screen and (min-width: $tablet-l) {
-        --page-x-margin: 8%;
-    }
-    @media only screen and (min-width: $pc-s) {
-        --page-x-margin: 10%;
-    }
-    @media only screen and (min-width: $pc-m) {
-        --page-x-margin: 12%;
-    }
-}
-
-$base-liner: linear-gradient(
-  158.17deg,
-  #f3f5fa -1.94%,
-  #ebedf2 102.24%
-);
-
-$shadow-base: 0.2rem 0.4rem 1rem #a5bac766,
-  -0.1rem -0.1rem 0.2rem #ffffffb3,
-  inset -0.6rem -0.8rem 1.2rem #ffffff73,
-  inset 0.2rem 0.3rem 0.4rem #cbd5df66;

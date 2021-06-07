@@ -1,7 +1,7 @@
 <template>
     <div :class="classesContainer" class="singleline-text-field input-group">
         <slot name="input-group-text"></slot>
-        <input v-model="value" :class="classesInput" class="singlline-text-field form-control" type="text" :placeholder="placeholder"/>
+        <input v-model="value" :class="classesInput" class="form-control" type="text" :placeholder="placeholder"/>
     </div>
 </template>
 
@@ -35,10 +35,16 @@
 <style lang="scss" scoped>
     .singleline-text-field{
         background-color: $base-color;
-        @include neumorphism-secondary("concave", $base-color, 0.4rem, null, true, 2px);
-        >*{
-            background: transparent;
-            border: 0;
+        @include neumorphism("pressed", $base-color, 0.4rem, null);
+        >*, ::v-slotted(*){
+            background: transparent !important;
+            border: 0 !important;
+        }
+        input{
+            color: $gray-color;
+            &:focus{
+                box-shadow: none;
+            }
         }
     }
 </style>

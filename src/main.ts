@@ -1,9 +1,14 @@
 require('popper.js').default;
-require('bootstrap');
+import 'bootstrap';
+import VueApexCharts from "vue3-apexcharts";
+import ApexCharts from 'apexcharts';
+
 
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
 
-createApp(App).use(store).use(router).mount('#app')
+const app = createApp(App)
+app.config.globalProperties.$apexcharts = ApexCharts;
+app.use(store).use(router).use(VueApexCharts).mount('#app');
